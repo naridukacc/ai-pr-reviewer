@@ -3149,7 +3149,7 @@ var ChatGPTAPI = class {
       model: CHATGPT_MODEL,
       // temperature: 0.8,
       top_p: 1,
-      presence_penalty: 1,
+      // presence_penalty: 1,
       ...completionParams
     };
     this._systemMessage = systemMessage;
