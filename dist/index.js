@@ -3147,7 +3147,7 @@ var ChatGPTAPI = class {
     this._fetch = fetch2;
     this._completionParams = {
       model: CHATGPT_MODEL,
-      temperature: 0.8,
+      // temperature: 0.8,
       top_p: 1,
       presence_penalty: 1,
       ...completionParams
@@ -3805,7 +3805,7 @@ IMPORTANT: Entire response must be in the language with ISO code: ${options.lang
                 maxModelTokens: openaiOptions.tokenLimits.maxTokens,
                 maxResponseTokens: openaiOptions.tokenLimits.responseTokens,
                 completionParams: {
-                    temperature: options.openaiModelTemperature,
+                    // temperature: options.openaiModelTemperature,
                     model: openaiOptions.model
                 }
             });
@@ -6552,7 +6552,7 @@ class TokenLimits {
         this.requestTokens = this.maxTokens - this.responseTokens - 100;
     }
     string() {
-        return `max_completion_tokens=${this.maxTokens}, request_tokens=${this.requestTokens}, response_tokens=${this.responseTokens}, knowledge_cutoff=${this.knowledgeCutOff}`;
+        return `max_tokens=${this.maxTokens}, request_tokens=${this.requestTokens}, response_tokens=${this.responseTokens}, knowledge_cutoff=${this.knowledgeCutOff}`;
     }
 }
 
@@ -6591,7 +6591,7 @@ class Options {
         this.systemMessage = systemMessage;
         this.openaiLightModel = openaiLightModel;
         this.openaiHeavyModel = openaiHeavyModel;
-        this.openaiModelTemperature = parseFloat(openaiModelTemperature);
+        // this.openaiModelTemperature = parseFloat(openaiModelTemperature);
         this.openaiRetries = parseInt(openaiRetries);
         this.openaiTimeoutMS = parseInt(openaiTimeoutMS);
         this.openaiConcurrencyLimit = parseInt(openaiConcurrencyLimit);
