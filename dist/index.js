@@ -3246,7 +3246,7 @@ Current date: ${currentDate}`;
           Authorization: `Bearer ${this._apiKey}`
         };
         const body = {
-          max_tokens: maxTokens,
+          max_completion_tokens: maxTokens,
           ...this._completionParams,
           ...completionParams,
           messages,

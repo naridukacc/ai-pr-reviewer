@@ -1,5 +1,5 @@
 export class TokenLimits {
-  maxCompletionTokens: number
+  maxTokens: number
   requestTokens: number
   responseTokens: number
   knowledgeCutOff: string
@@ -20,21 +20,21 @@ export class TokenLimits {
     }
 
     if (modelLimits[model]) {
-      this.maxCompletionTokens = modelLimits[model].maxTokens
+      this.maxTokens = modelLimits[model].maxTokens
       this.responseTokens = modelLimits[model].responseTokens
       this.knowledgeCutOff = modelLimits[model].knowledgeCutOff
     } else {
       // デフォルト値
-      this.maxCompletionTokens = 4000
+      this.maxTokens = 4000
       this.responseTokens = 1000
       this.knowledgeCutOff = '2021-09-01'
     }
 
     // provide some margin for the request tokens
-    this.requestTokens = this.maxCompletionTokens - this.responseTokens - 100
+    this.requestTokens = this.maxTokens - this.responseTokens - 100
   }
 
   string(): string {
-    return `max_completion_tokens=${this.maxCompletionTokens}, request_tokens=${this.requestTokens}, response_tokens=${this.responseTokens}, knowledge_cutoff=${this.knowledgeCutOff}`
+    return `max_tokens=${this.maxTokens}, request_tokens=${this.requestTokens}, response_tokens=${this.responseTokens}, knowledge_cutoff=${this.knowledgeCutOff}`
   }
 }

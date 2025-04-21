@@ -57,12 +57,8 @@ export class Options {
     this.openaiTimeoutMS = parseInt(openaiTimeoutMS)
     this.openaiConcurrencyLimit = parseInt(openaiConcurrencyLimit)
     this.githubConcurrencyLimit = parseInt(githubConcurrencyLimit)
-    this.lightTokenLimits = new TokenLimits(
-      openaiLightModel.replace('max_tokens', 'max_completion_tokens')
-    )
-    this.heavyTokenLimits = new TokenLimits(
-      openaiHeavyModel.replace('max_tokens', 'max_completion_tokens')
-    )
+    this.lightTokenLimits = new TokenLimits(openaiLightModel)
+    this.heavyTokenLimits = new TokenLimits(openaiHeavyModel)
     this.apiBaseUrl = apiBaseUrl
     this.language = language
   }
