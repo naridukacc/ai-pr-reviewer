@@ -6552,7 +6552,7 @@ class TokenLimits {
         this.requestTokens = this.maxTokens - this.responseTokens - 100;
     }
     string() {
-        return `max_tokens=${this.maxTokens}, request_tokens=${this.requestTokens}, response_tokens=${this.responseTokens}, knowledge_cutoff=${this.knowledgeCutOff}`;
+        return `max_completion_tokens=${this.maxTokens}, request_tokens=${this.requestTokens}, response_tokens=${this.responseTokens}, knowledge_cutoff=${this.knowledgeCutOff}`;
     }
 }
 
