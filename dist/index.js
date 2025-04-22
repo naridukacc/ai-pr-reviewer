@@ -3805,7 +3805,7 @@ IMPORTANT: Entire response must be in the language with ISO code: ${options.lang
                 maxModelTokens: openaiOptions.tokenLimits.maxTokens,
                 maxResponseTokens: openaiOptions.tokenLimits.responseTokens,
                 completionParams: {
-                    // temperature: options.openaiModelTemperature,
+                    temperature: options.openaiModelTemperature,
                     model: openaiOptions.model
                 }
             });
@@ -6531,7 +6531,7 @@ class TokenLimits {
             'gpt-4-32k': { maxTokens: 32000, responseTokens: 4000, knowledgeCutOff: '2023-03-01' },
             'gpt-4-turbo': { maxTokens: 128000, responseTokens: 5000, knowledgeCutOff: '2024-01-01' },
             'gpt-4.1': { maxTokens: 1047576, responseTokens: 10000, knowledgeCutOff: '2024-06-01' },
-            'o3': { maxTokens: 200000, responseTokens: 5000, knowledgeCutOff: '2025-01-01' },
+            'gpt-4.1-nano': { maxTokens: 5000, responseTokens: 1000, knowledgeCutOff: '2024-06-01' },
             'o3-mini': { maxTokens: 204800, responseTokens: 4000, knowledgeCutOff: '2025-01-01' },
             'o4-mini': { maxTokens: 200000, responseTokens: 4000, knowledgeCutOff: '2025-04-01' },
             'claude-2': { maxTokens: 100000, responseTokens: 5000, knowledgeCutOff: '2023-12-01' },
@@ -6591,7 +6591,7 @@ class Options {
         this.systemMessage = systemMessage;
         this.openaiLightModel = openaiLightModel;
         this.openaiHeavyModel = openaiHeavyModel;
-        // this.openaiModelTemperature = parseFloat(openaiModelTemperature);
+        this.openaiModelTemperature = parseFloat(openaiModelTemperature);
         this.openaiRetries = parseInt(openaiRetries);
         this.openaiTimeoutMS = parseInt(openaiTimeoutMS);
         this.openaiConcurrencyLimit = parseInt(openaiConcurrencyLimit);
