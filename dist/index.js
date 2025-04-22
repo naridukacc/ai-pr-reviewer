@@ -3805,7 +3805,7 @@ IMPORTANT: Entire response must be in the language with ISO code: ${options.lang
                 maxModelTokens: openaiOptions.tokenLimits.maxTokens,
                 maxResponseTokens: openaiOptions.tokenLimits.responseTokens,
                 completionParams: {
-                    temperature: options.openaiModelTemperature,
+                    // temperature: options.openaiModelTemperature,
                     model: openaiOptions.model
                 }
             });
