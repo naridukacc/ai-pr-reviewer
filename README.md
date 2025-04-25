@@ -23,7 +23,7 @@ permissions:
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
     branches-ignore:
       - 'main'
       - 'staging'
@@ -187,6 +187,7 @@ var ChatGPTAPI = class {
 ```
 
 ```ts
+// 本ファイルはsrc/bot.tsに存在するので、パッケージ化前にコメントアウトしても問題なし
 class Bot {
     api = null; // not free
     options;

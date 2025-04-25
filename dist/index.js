@@ -3805,7 +3805,7 @@ IMPORTANT: Entire response must be in the language with ISO code: ${options.lang
                 maxModelTokens: openaiOptions.tokenLimits.maxTokens,
                 maxResponseTokens: openaiOptions.tokenLimits.responseTokens,
                 completionParams: {
-                    // temperature: options.openaiModelTemperature,
+                    //temperature: options.openaiModelTemperature,
                     model: openaiOptions.model
                 }
             });
@@ -6523,7 +6523,7 @@ class TokenLimits {
     requestTokens;
     responseTokens;
     knowledgeCutOff;
-    constructor(model = 'gpt-3.5-turbo') {
+    constructor(model = 'gpt-4.1-nano') {
         const modelLimits = {
             'gpt-3.5-turbo': {
                 maxTokens: 16000,
@@ -6604,7 +6604,7 @@ class Options {
     heavyTokenLimits;
     apiBaseUrl;
     language;
-    constructor(debug, disableReview, disableReleaseNotes, maxFiles = '0', reviewSimpleChanges = false, reviewCommentLGTM = false, pathFilters = null, systemMessage = '', openaiLightModel = 'gpt-3.5-turbo', openaiHeavyModel = 'gpt-3.5-turbo', openaiModelTemperature = '0.0', openaiRetries = '3', openaiTimeoutMS = '120000', openaiConcurrencyLimit = '6', githubConcurrencyLimit = '6', apiBaseUrl = 'https://api.openai.com/v1', language = 'en-US') {
+    constructor(debug, disableReview, disableReleaseNotes, maxFiles = '0', reviewSimpleChanges = false, reviewCommentLGTM = false, pathFilters = null, systemMessage = '', openaiLightModel = 'gpt-4.1-nano', openaiHeavyModel = 'gpt-4.1-nano', openaiModelTemperature = '0.0', openaiRetries = '3', openaiTimeoutMS = '120000', openaiConcurrencyLimit = '6', githubConcurrencyLimit = '6', apiBaseUrl = 'https://api.openai.com/v1', language = 'en-US') {
         this.debug = debug;
         this.disableReview = disableReview;
         this.disableReleaseNotes = disableReleaseNotes;
@@ -6697,7 +6697,7 @@ class PathFilter {
 class OpenAIOptions {
     model;
     tokenLimits;
-    constructor(model = 'gpt-3.5-turbo', tokenLimits = null) {
+    constructor(model = 'gpt-4.1-nano', tokenLimits = null) {
         this.model = model;
         if (tokenLimits != null) {
             this.tokenLimits = tokenLimits;

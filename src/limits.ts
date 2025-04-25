@@ -4,7 +4,7 @@ export class TokenLimits {
   responseTokens: number
   knowledgeCutOff: string
 
-  constructor(model = 'gpt-3.5-turbo') {
+  constructor(model = 'gpt-4.1-nano') {
     const modelLimits: Record<
       string,
       {
