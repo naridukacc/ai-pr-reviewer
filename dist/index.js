@@ -6559,6 +6559,21 @@ class TokenLimits {
                 maxTokens: 200000,
                 responseTokens: 4000,
                 knowledgeCutOff: '2025-04-01'
+            },
+            'gpt-5': {
+                maxTokens: 400000,
+                responseTokens: 128000,
+                knowledgeCutOff: '2025-08-07'
+            },
+            'gpt-5-mini': {
+                maxTokens: 400000,
+                responseTokens: 128000,
+                knowledgeCutOff: '2025-08-07'
+            },
+            'gpt-5-nano': {
+                maxTokens: 400000,
+                responseTokens: 128000,
+                knowledgeCutOff: '2025-08-07'
             }
         };
         if (modelLimits[model]) {
